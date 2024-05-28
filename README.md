@@ -14,13 +14,9 @@
     + [EDA and Data Processing](#eda-and-data-processing)
   * [Modeling and Fit](#modeling-and-fit)
     + [Base Segmentation](#base-segmentation)
-    + [결과](#--)
   * [**Experiment**](#--experiment--)
     + [**Experiment results**](#--experiment-results--)
   * [**References**](#--references--)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 ---
 
