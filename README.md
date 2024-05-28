@@ -2,8 +2,6 @@
 
 ## **Contents**
 
-- [brain-tumor-Segmentation](#brain-tumor-segmentation)
-  * [**Contents**](#--contents--)
   * [Overview](#overview)
   * [**Basic Concepts**](#--basic-concepts--)
     + [**Sementic Segmentation**](#--sementic-segmentation--)
