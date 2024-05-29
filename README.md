@@ -3,20 +3,20 @@
 ## Contents
 
   - [Overview](#overview)
-  - [**Basic Concepts**](#--basic-concepts--)
-    + [**Sementic Segmentation**](#--sementic-segmentation--)
+  - [**Basic Concepts**](#basic-concepts)
+    + [**Sementic Segmentation**](#sementic-segmentation)
     + [Atrous Convolution(Dilated Convolution)](#atrous-convolution-dilated-convolution-)
-    + [**Spatial Pyramid Pooling**](#--spatial-pyramid-pooling--)
+    + [**Spatial Pyramid Pooling**](#spatial-pyramid-pooling)
     + [U-net](#u-net)
-  - [E**nvironment**](#e--nvironment--)
-    + [**research environment**](#--research-environment--)
+  - [E**nvironment**](#environment)
+    + [**research environment**](#research-environment)
   - [DataSet](#dataset)
     + [EDA and Data Processing](#eda-and-data-processing)
   - [Modeling and Fit](#modeling-and-fit)
     + [Base Segmentation](#base-segmentation)
   - [**Experiment**](#--experiment--)
-    + [**Experiment results**](#--experiment-results--)
-  - [**References**](#--references--)
+    + [**Experiment results**](#experiment-results)
+  - [**References**](#references)
 
 ---
 
@@ -153,7 +153,7 @@ image, label overlab
 
 Mri 사진 데이터는 입체적인 뇌를 분할 하여 촬영 하였기 때문에
 
-![MRI 촬영을 설명하기 위한 예시](brain-tumor-Segmentation 9669ed4be1ac4f33b8731e4ff2c8b195\Untitled 13.gif)
+![Untitled](brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/Untitled%2012.png)
 
 MRI 촬영을 설명하기 위한 예시
 
