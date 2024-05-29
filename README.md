@@ -153,7 +153,7 @@ image, label overlab
 
 Mri 사진 데이터는 입체적인 뇌를 분할 하여 촬영 하였기 때문에
 
-![Untitled](brain-tumor-Segmentation 9669ed4be1ac4f33b8731e4ff2c8b195/Untitled 13.gif)
+![Untitled](https://github.com/Masterjun12/brain_tumor_segmentation/blob/1c205ac35b4cddbbf44794c37b2a454650d3e132/brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/Untitled%2013.gif)
 
 MRI 촬영을 설명하기 위한 예시
 
