@@ -1,22 +1,22 @@
 # brain-tumor-Segmentation
 
-## **Contents**
+## Contents
 
-  * [Overview](#overview)
-  * [**Basic Concepts**](#--basic-concepts--)
+  - [Overview](#overview)
+  - [**Basic Concepts**](#--basic-concepts--)
     + [**Sementic Segmentation**](#--sementic-segmentation--)
     + [Atrous Convolution(Dilated Convolution)](#atrous-convolution-dilated-convolution-)
     + [**Spatial Pyramid Pooling**](#--spatial-pyramid-pooling--)
     + [U-net](#u-net)
-  * [E**nvironment**](#e--nvironment--)
+  - [E**nvironment**](#e--nvironment--)
     + [**research environment**](#--research-environment--)
-  * [DataSet](#dataset)
+  - [DataSet](#dataset)
     + [EDA and Data Processing](#eda-and-data-processing)
-  * [Modeling and Fit](#modeling-and-fit)
+  - [Modeling and Fit](#modeling-and-fit)
     + [Base Segmentation](#base-segmentation)
-  * [**Experiment**](#--experiment--)
+  - [**Experiment**](#--experiment--)
     + [**Experiment results**](#--experiment-results--)
-  * [**References**](#--references--)
+  - [**References**](#--references--)
 
 ---
 
@@ -32,11 +32,11 @@ Building upon the foundation laid by U-Net, these efforts have explored innovati
 
 Through meticulous experimentation and iterative refinement, researchers have sought to push the boundaries of existing segmentation techniques, with the ultimate aim of facilitating more accurate diagnosis and treatment planning for patients with brain tumors. This journey underscores the collective pursuit within the research community towards continually refining and perfecting the art of brain tumor segmentation.
 
-## **Basic Concepts**
+## Basic Concepts
 
 ---
 
-### **Sementic Segmentation**
+### Sementic Segmentation
 
 - 실제로 인식할 수 있는 물리적 의미 단위로 인식하는 세그멘테이션을 시멘틱 세그멘테이션(sementic segmentation)
 
@@ -57,7 +57,7 @@ r = 1일 경우에는 기존 Convolution과 동일하다는 뜻
 1. field of view(한 픽셀이 볼 수 있는 영역)를 크게 가져갈 수 있으면서 일반 컨볼루션과 동일한 연산량
 2. Receptive Field 를 늘려서 필터가 볼 수 있는 영역을 확대함
 
-### **Spatial Pyramid Pooling**
+### Spatial Pyramid Pooling
 
 ![Untitled](brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/Untitled%202.png)
 
@@ -84,11 +84,11 @@ r = 1일 경우에는 기존 Convolution과 동일하다는 뜻
 2. **스킵 연결(skip connections)**: 인코더와 디코더 간의 스킵 연결. 이는 인코더의 각 단계에서 추출된 특성 맵을 디코더의 해당 단계로 직접 연결하여 정보 유실을 방지, 더 정확한 분할가능
 3. **잔여 연결(residual connections)**: 일부 유넷 구조에서는 잔여 연결이 사용됨. 이는 디코더의 각 층에서 이전 층의 출력을 현재 층의 입력에 추가하여 정보의 흐름을 최적화
 
-## E**nvironment**
+## Environment
 
 ---
 
-### **research environment**
+### research environment
 
 ```markdown
 hardwear : Nvidia A100
@@ -153,7 +153,7 @@ image, label overlab
 
 Mri 사진 데이터는 입체적인 뇌를 분할 하여 촬영 하였기 때문에
 
-![MRI 촬영을 설명하기 위한 예시](brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/Untitled%2013.png)
+![MRI 촬영을 설명하기 위한 예시](brain-tumor-Segmentation 9669ed4be1ac4f33b8731e4ff2c8b195\Untitled 13.gif)
 
 MRI 촬영을 설명하기 위한 예시
 
@@ -282,11 +282,11 @@ history= model.fit(train_images, train_labels, epochs=100, batch_size=32, valida
 | Col Ave | 0.90615 | 0.9885 | 0.899525 | 0.900675 |
 - 선택한 measure 로는 recall 값을 이용한다.
 
-## **Experiment**
+## Experiment
 
 ---
 
-### **Experiment results**
+### Experiment results
 
 - 모델의 변형
 - 로스의 변형
@@ -317,6 +317,6 @@ history= model.fit(train_images, train_labels, epochs=100, batch_size=32, valida
 | 21 | unet_dropout-dilation_rate_nobridge | 12046212 (45.95 MB) | adam | bce_dice_loss | 0.9117 | 0.924175 | 0.937175 | 0.982825 | U-net |
 | 22 | croped_4channel_unet_nobridge | 15826116 (60.37 MB) | adam | bce_dice_loss | 0.7519 | 0.787425 | 0.83205 | 0.94565 | U-net |
 
-## **References**
+## References
 
 ---
