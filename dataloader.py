@@ -22,7 +22,7 @@ class DataProcessor:
         self.train_labels = np.load(f'{self.train_path}/train_labels.npy')
         self.val_labels = np.load(f'{self.val_path}/val_labels.npy')
         self.test_labels = np.load(f'{self.test_path}/test_labels.npy')
-
+        
         # Process labels: change label 4 to 3
         self.train_labels = np.where(self.train_labels == 4, 3, self.train_labels)
         self.val_labels = np.where(self.val_labels == 4, 3, self.val_labels)
