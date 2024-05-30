@@ -1,4 +1,4 @@
-from tensorflow.keras.losses import binary_crossentropy, categorical_crossentropy
+from tensorflow.keras.losses import binary_crossentropy
 from tensorflow.keras import backend as K
 import tensorflow as tf
 
@@ -18,12 +18,3 @@ def bce_dice_loss(y_true, y_pred):
 def ell_loss(y_true, y_pred, alpha=0.2):
     return alpha * binary_crossentropy(y_true, y_pred) + (1 - alpha) * dice_loss(y_true, y_pred)
 
-# categorical_cross_entropy
-def categorical_cross_entropy(y_true, y_pred):
-    # Ensure labels have the shape (batch_size, num_classes) and are one-hot encoded
-    # This step may not be necessary if your labels are already in one-hot encoded format
-    y_true = tf.one_hot(tf.cast(y_true, tf.int32), depth=y_pred.shape[-1])
-
-    # Calculate cross entropy
-    loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y_true, logits=y_pred))
-    return loss

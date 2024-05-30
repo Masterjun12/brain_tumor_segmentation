@@ -3,20 +3,20 @@
 ## Contents
 
   - [Overview](#overview)
-  - [**Basic Concepts**](#basic-concepts)
-    + [**Sementic Segmentation**](#sementic-segmentation)
+  - [**Basic Concepts**](#--basic-concepts--)
+    + [**Sementic Segmentation**](#--sementic-segmentation--)
     + [Atrous Convolution(Dilated Convolution)](#atrous-convolution-dilated-convolution-)
-    + [**Spatial Pyramid Pooling**](#spatial-pyramid-pooling)
+    + [**Spatial Pyramid Pooling**](#--spatial-pyramid-pooling--)
     + [U-net](#u-net)
-  - [E**nvironment**](#environment)
-    + [**research environment**](#research-environment)
+  - [E**nvironment**](#e--nvironment--)
+    + [**research environment**](#--research-environment--)
   - [DataSet](#dataset)
     + [EDA and Data Processing](#eda-and-data-processing)
   - [Modeling and Fit](#modeling-and-fit)
     + [Base Segmentation](#base-segmentation)
   - [**Experiment**](#--experiment--)
-    + [**Experiment results**](#experiment-results)
-  - [**References**](#references)
+    + [**Experiment results**](#--experiment-results--)
+  - [**References**](#--references--)
 
 ---
 
@@ -83,14 +83,6 @@ r = 1일 경우에는 기존 Convolution과 동일하다는 뜻
 1. **인코더-디코더 구조**: 유넷은 대칭적이고 인코더(encoder)와 디코더(decoder)라는 두 가지 주요 구성 요소로 이루어짐. 인코더는 입력 이미지를 점진적으로 다운샘플링하여 특성을 추출, 디코더는 이러한 특성을 업샘플링하여 입력 이미지와 동일한 해상도로 복원
 2. **스킵 연결(skip connections)**: 인코더와 디코더 간의 스킵 연결. 이는 인코더의 각 단계에서 추출된 특성 맵을 디코더의 해당 단계로 직접 연결하여 정보 유실을 방지, 더 정확한 분할가능
 3. **잔여 연결(residual connections)**: 일부 유넷 구조에서는 잔여 연결이 사용됨. 이는 디코더의 각 층에서 이전 층의 출력을 현재 층의 입력에 추가하여 정보의 흐름을 최적화
-
-### Dice Loss
-
-![Untitled](https://github.com/Masterjun12/brain_tumor_segmentation/blob/92e18077094bcd2c0eee1c49f075f1e4a591b93b/brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/Untitled%2019.png)
-
-두 샘플 집합 간의 유사도를 측정 한다
-Dice Similarity Coefficient는 0에서 1 사이의 값을 가진다. 값이 1에 가까울수록 두 집합이 유사하다는 것을 의미
-이를 로스 함수로 적용하여 두 집합간의 유사도를 높히는 방향으로 학습한다.
 
 ## Environment
 
@@ -161,7 +153,7 @@ image, label overlab
 
 Mri 사진 데이터는 입체적인 뇌를 분할 하여 촬영 하였기 때문에
 
-![Untitled](https://github.com/Masterjun12/brain_tumor_segmentation/blob/1c205ac35b4cddbbf44794c37b2a454650d3e132/brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/Untitled%2013.gif)
+![MRI 촬영을 설명하기 위한 예시](brain-tumor-Segmentation 9669ed4be1ac4f33b8731e4ff2c8b195\Untitled 13.gif)
 
 MRI 촬영을 설명하기 위한 예시
 
