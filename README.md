@@ -87,7 +87,7 @@ r = 1일 경우에는 기존 Convolution과 동일하다는 뜻
 
 ### Dice Loss
 
-![Untitled](brain-tumor-Segmentation 9669ed4be1ac4f33b8731e4ff2c8b195/Untitled 19.png)
+![Untitled](https://github.com/Masterjun12/brain_tumor_segmentation/blob/6dc6fa98fe07e4419fdfd1b84fdfe51729cbff6c/brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/Untitled%2019.png)
 
 Dice loss는 세그멘테이션 문제에 널리 사용되는 손실 함수
 Dice loss는 Dice Similarity Coefficient (DSC)측정 지표를 기반함
@@ -165,7 +165,7 @@ image, label overlab
 
 Mri 사진 데이터는 입체적인 뇌를 분할 하여 촬영 하였기 때문에
 
-![MRI 촬영을 설명하기 위한 예시](brain-tumor-Segmentation 9669ed4be1ac4f33b8731e4ff2c8b195/Untitled 13.gif)
+![MRI 촬영을 설명하기 위한 예시](https://github.com/Masterjun12/brain_tumor_segmentation/blob/6dc6fa98fe07e4419fdfd1b84fdfe51729cbff6c/brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/Untitled%2013.gif)
 
 MRI 촬영을 설명하기 위한 예시
 
