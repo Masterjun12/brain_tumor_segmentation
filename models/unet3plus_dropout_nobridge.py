@@ -110,7 +110,7 @@ def f_model(input_shape, num_classes=4, deep_sup=False):
 
     else:
         y1 = L.Conv2D(num_classes, kernel_size=1, padding="same")(d1)
-        y1 = L.Activation("softmax")(y1)
+        y1 = L.Activation("sigmoid")(y1)
         outputs = [y1]
 
     model = tf.keras.Model(inputs, outputs)
