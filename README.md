@@ -54,7 +54,7 @@ r = 1일 경우에는 기존 Convolution과 동일하다는 뜻
 장점
 
 1. field of view(한 픽셀이 볼 수 있는 영역)를 크게 가져갈 수 있으면서 일반 컨볼루션과 동일한 연산량
-2. Receptive Field 를 늘려서 필터가 볼 수 있는 영역을 확대함
+2. Receptive Field 를 늘려서 필터가 볼 수 있는 영역을 확대한다
 
 ### Spatial Pyramid Pooling
 
