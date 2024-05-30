@@ -1,5 +1,6 @@
 from tensorflow.keras.losses import binary_crossentropy, categorical_crossentropy
 from tensorflow.keras import backend as K
+import tensorflow as tf
 
 def dice_loss(y_true, y_pred):
     smooth = 1e-6
