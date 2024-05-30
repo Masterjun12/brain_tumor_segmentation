@@ -1,7 +1,5 @@
 # brain-tumor-Segmentation
 
-# brain-tumor-Segmentation
-
 ## Contents
 
   - [Overview](#overview)
