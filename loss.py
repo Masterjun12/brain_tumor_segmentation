@@ -19,37 +19,20 @@ def alphabcedice(y_true, y_pred, alpha=0.2):
     return alpha * binary_crossentropy(y_true, y_pred) + (1 - alpha) * dice_loss(y_true, y_pred)
     
 #Focal
-def focal_loss(y_true, y_pred, alpha=0.25, gamma=2.0):
-    """
-    Focal Loss function.
-    :param y_true: True labels
-    :param y_pred: Predicted labels
-    :param alpha: Alpha value for balancing class frequencies
-    :param gamma: Gamma value for adjusting the rate of focus on hard examples
-    :return: Focal Loss
-    """
-    # Compute Binary Crossentropy
-    bce = binary_crossentropy(y_true, y_pred)
+def focal_loss(y_true, y_pred, gamma=2.0, alpha=0.25):
+    y_true = tf.convert_to_tensor(y_true, dtype=tf.float32)
+    y_pred = tf.convert_to_tensor(y_pred, dtype=tf.float32)
+
+    # Focal Loss 계산
+    epsilon = K.epsilon()
+    y_pred = K.clip(y_pred, epsilon, 1. - epsilon)
+    y_true = tf.cast(y_true, tf.float32)
+    alpha_t = y_true * alpha + (K.ones_like(y_true) - y_true) * (1 - alpha)
+    p_t = y_true * y_pred + (K.ones_like(y_true) - y_true) * (1 - y_pred)
+    fl = - alpha_t * K.pow((K.ones_like(y_true) - p_t), gamma) * K.log(p_t)
     
-    # Compute Focal Loss
-    p_t = (y_true * y_pred) + ((1 - y_true) * (1 - y_pred))
-    alpha_factor = y_true * alpha + (1 - y_true) * (1 - alpha)
-    modulating_factor = K.pow((1.0 - p_t), gamma)
-    focal_loss = alpha_factor * modulating_factor * bce
-    
-    return focal_loss
-#DiceFocal
-def bce_dice_focal_loss(y_true, y_pred, alpha=0.25, gamma=2.0):
-    """
-    Combined Binary Crossentropy, Dice, and Focal Loss function.
-    :param y_true: True labels
-    :param y_pred: Predicted labels
-    :param alpha: Alpha value for balancing class frequencies in Focal Loss
-    :param gamma: Gamma value for adjusting the rate of focus on hard examples in Focal Loss
-    :return: Combined loss
-    """
-    bce_dice = binary_crossentropy(y_true, y_pred) + dice_loss(y_true, y_pred)
-    focal = focal_loss(y_true, y_pred, alpha=alpha, gamma=gamma)
-    return bce_dice + focal
+    return K.sum(fl, axis=-1)
 
 
+def focal_dice_loss(y_true, y_pred, alpha=0.25, gamma=2.0):
+    return focal_loss(y_true, y_pred, gamma, alpha) + dice_loss(y_true, y_pred)
