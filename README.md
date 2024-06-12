@@ -304,14 +304,14 @@ history= model.fit(train_images, train_labels, epochs=100, batch_size=32, valida
 
 | 순 | 제목 | parameter | opt | loss | recall | f1 score | precision | specificity | basemodel |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 3++_unet_nobridge | 8907396 (33.98 MB) | adam | ell_loss (0.2) | 0.92805 | 0.92965 | 0.93135 | 0.988625 | U-net 3++ |
+| 1 | 3++_unet_nobridge | 8907396 (33.98 MB) | adam | alphabcedice (0.2) | 0.92805 | 0.92965 | 0.93135 | 0.988625 | U-net 3++ |
 | 2 | unet_nobridge | 15826116 (60.37 MB) | adam | bce_dice_loss | 0.92415 | 0.92325 | 0.922525 | 0.98885 | U-net |
 | 3 | res-unet++_nobridge | 4092868 (15.61 MB) | adam | bce_dice_loss | 0.912525 | 0.922825 | 0.933575 | 0.985125 | res-unet++ |
-| 4 | unet_ell-loss_nobridge | 15826116 (60.37 MB) | adam | ell_loss (0.7) | 0.92415 | 0.92325 | 0.922525 | 0.98885 | U-net |
-| 5 | 3cnn_block_unet | 46774852 (178.43 MB) | adam | ell_loss (0.7) | 0.90615 | 0.899525 | 0.900675 | 0.9885 | U-net |
-| 6 | 3cnn_block_unet-nobridge | 22117956 (84.37 MB) | adam | ell_loss (0.7) | 0.917575 | 0.91495 | 0.912425 | 0.98785 | U-net |
+| 4 | unet_ell-loss_nobridge | 15826116 (60.37 MB) | adam | alphabcedice (0.7) | 0.92415 | 0.92325 | 0.922525 | 0.98885 | U-net |
+| 5 | 3cnn_block_unet | 46774852 (178.43 MB) | adam | alphabcedice (0.7) | 0.90615 | 0.899525 | 0.900675 | 0.9885 | U-net |
+| 6 | 3cnn_block_unet-nobridge | 22117956 (84.37 MB) | adam | alphabcedice (0.7) | 0.917575 | 0.91495 | 0.912425 | 0.98785 | U-net |
 | 7 | 3cnn_block_unet-nobridge-weightedloss | 22117956 (84.37 MB) | adam | weighted | 0.912925 | 0.909575 | 0.908725 | 0.9791 | U-net |
-| 8 | 3cnn_block_unet-5channel | 46775428 (178.43 MB) | adam | ell_loss (0.7) | 0.90575 | 0.916925 | 0.929375 | 0.98385 | U-net |
+| 8 | 3cnn_block_unet-5channel | 46775428 (178.43 MB) | adam | alphabcedice (0.7) | 0.90575 | 0.916925 | 0.929375 | 0.98385 | U-net |
 | 9 | 3cnn_block_unet-5channel-nobridge | 22118532 (84.38 MB) | adam | bce_dice_loss | 0.9116 | 0.916575 | 0.921925 | 0.982225 | U-net |
 | 10 | 3cnn_block_3++_5channel-nobridge_wloss | 18127940 (69.15 MB) | adam | soft_dice_loss | 0.922925 | 0.92735 | 0.932 | 0.985725 | U-net 3++ |
 | 11 | 3cnn_block_3++_5channel-nobridge_wloss | 12046212 (45.95 MB) | adam | bce_dice_loss | 0.9264 | 0.9286 | 0.93115 | 0.988825 | U-net 3++ |
