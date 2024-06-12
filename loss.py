@@ -14,8 +14,10 @@ def dice_loss(y_true, y_pred):
 def bce_dice_loss(y_true, y_pred):
     return binary_crossentropy(y_true, y_pred) + dice_loss(y_true, y_pred)
 
-# ELL
-
+# alphabcedice
+def alphabcedice(y_true, y_pred, alpha=0.2):
+    return alpha * binary_crossentropy(y_true, y_pred) + (1 - alpha) * dice_loss(y_true, y_pred)
+    
 #Focal
 def focal_loss(y_true, y_pred, alpha=0.25, gamma=2.0):
     """
