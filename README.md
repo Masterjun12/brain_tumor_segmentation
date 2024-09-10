@@ -326,6 +326,7 @@ history= model.fit(train_images, train_labels, epochs=100, batch_size=32, valida
 | 20 | 3cnn_block_3++_5channel-nobridge_wloss-ell-dilation_rate=3 | 15911684 (60.70 MB) | adam | bce_dice_loss | 0.926275 | 0.923475 | 0.9214 | 0.9866 | U-net 3++ |
 | 21 | unet_dropout-dilation_rate_nobridge | 12046212 (45.95 MB) | adam | bce_dice_loss | 0.9117 | 0.924175 | 0.937175 | 0.982825 | U-net |
 | 22 | croped_4channel_unet_nobridge | 15826116 (60.37 MB) | adam | bce_dice_loss | 0.7519 | 0.787425 | 0.83205 | 0.94565 | U-net |
+![image](https://github.com/user-attachments/assets/55e4f492-b06a-41b3-a056-c2b33f8dc576)
 
 ## References
 
