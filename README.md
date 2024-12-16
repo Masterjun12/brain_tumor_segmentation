@@ -115,6 +115,21 @@ tensorflow : 2.13.0
 
 - DataSet : BRATS 2017
 
+- MRI 채널 설명:
+
+- T1 (T1-weighted):
+  고해상도로 뇌 구조를 시각화하며, 뇌의 해부학적 정보를 잘 보여줌.
+  CSF(뇌척수액)가 어둡게 나타나는 특징.
+- T1ce (T1 with contrast enhancement):
+  조영제를 주입한 후 촬영된 T1 이미지.
+  종양 부위가 강조되어 종양의 경계와 특징을 명확히 파악 가능.
+- T2 (T2-weighted):
+  뇌의 수분 함량을 잘 반영하며, 병변과 종양 주변의 부종 영역을 확인하는 데 유용.
+  CSF가 밝게 나타나는 특징.
+- FLAIR (Fluid-Attenuated Inversion Recovery):
+  T2 기반 이미지로, CSF를 억제하여 병변과 종양 영역을 더 선명하게 표현.
+  비정상 조직(예: 부종)을 감지하는 데 유용.
+
 - image
     - mri는 4가지 양식(t1,t1ce,t2,flair)으로 촬영되었고, 4개를 하나의 데이터(RGB Image가 3channel인것과 같음)로 사용함
     
