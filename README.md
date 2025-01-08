@@ -317,30 +317,49 @@ history= model.fit(train_images, train_labels, epochs=100, batch_size=32, valida
 - 로스의 변형
 - 데이터셋 전처리
 
-| 순 | 제목 | parameter | opt | loss | recall | f1 score | precision | specificity | basemodel |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 3++_unet_nobridge | 8907396 (33.98 MB) | adam | alphabcedice (0.2) | 0.92805 | 0.92965 | 0.93135 | 0.988625 | U-net 3++ |
-| 2 | unet_nobridge | 15826116 (60.37 MB) | adam | bce_dice_loss | 0.92415 | 0.92325 | 0.922525 | 0.98885 | U-net |
-| 3 | res-unet++_nobridge | 4092868 (15.61 MB) | adam | bce_dice_loss | 0.912525 | 0.922825 | 0.933575 | 0.985125 | res-unet++ |
-| 4 | unet_ell-loss_nobridge | 15826116 (60.37 MB) | adam | alphabcedice (0.7) | 0.92415 | 0.92325 | 0.922525 | 0.98885 | U-net |
-| 5 | 3cnn_block_unet | 46774852 (178.43 MB) | adam | alphabcedice (0.7) | 0.90615 | 0.899525 | 0.900675 | 0.9885 | U-net |
-| 6 | 3cnn_block_unet-nobridge | 22117956 (84.37 MB) | adam | alphabcedice (0.7) | 0.917575 | 0.91495 | 0.912425 | 0.98785 | U-net |
-| 7 | 3cnn_block_unet-nobridge-weightedloss | 22117956 (84.37 MB) | adam | weighted | 0.912925 | 0.909575 | 0.908725 | 0.9791 | U-net |
-| 8 | 3cnn_block_unet-5channel | 46775428 (178.43 MB) | adam | alphabcedice (0.7) | 0.90575 | 0.916925 | 0.929375 | 0.98385 | U-net |
-| 9 | 3cnn_block_unet-5channel-nobridge | 22118532 (84.38 MB) | adam | bce_dice_loss | 0.9116 | 0.916575 | 0.921925 | 0.982225 | U-net |
-| 10 | 3cnn_block_3++_5channel-nobridge_wloss | 18127940 (69.15 MB) | adam | soft_dice_loss | 0.922925 | 0.92735 | 0.932 | 0.985725 | U-net 3++ |
-| 11 | 3cnn_block_3++_5channel-nobridge_wloss | 12046212 (45.95 MB) | adam | bce_dice_loss | 0.9264 | 0.9286 | 0.93115 | 0.988825 | U-net 3++ |
-| 12 | 3cnn_block_3++_soft | 12046212 (45.95 MB) | Adagrad | bce_dice_loss | 0.870175 | 0.887325 | 0.9056 | 0.975275 | U-net 3++ |
-| 13 | unet_dropout | 31032516 (118.38 MB) | adam | bce_dice_loss | 0.9253 | 0.92805 | 0.931025 | 0.986175 | U-net |
-| 14 | unet_nobridge_dropout | 15826116 (60.37 MB) | Adagrad | bce_dice_loss | 0.656725 | 0.657225 | 0.7663 | 0.9511 | U-net |
-| 15 | unet_dropout_soft | 31032516 (118.38 MB) | Adagrad | bce_dice_loss | 0.607625 | 0.64925 | 0.800775 | 0.918125 | U-net |
-| 16 | res-unet++-dropout | 4092868 (15.61 MB) | Adagrad | soft_dice_loss | 0.772875 | 0.78815 | 0.8222 | 0.97215 | res-unet++ |
-| 17 | unet_dropout-dilation_rate | 31379716 (119.70 MB) | adam | bce_dice_loss | 0.9169 | 0.92425 | 0.9317 | 0.9846 | U-net |
-| 18 | unet_dilation_rate | 31379716 (119.70 MB | adam | bce_dice_loss | 0.926875 | 0.9262 | 0.925725 | 0.98855 | U-net |
-| 19 | 3++_nobridge-dropout-e3 | 8907396 (33.98 MB) | adam | bce_dice_loss | 0.921925 | 0.928925 | 0.936225 | 0.984475 | U-net 3++ |
-| 20 | 3cnn_block_3++_5channel-nobridge_wloss-ell-dilation_rate=3 | 15911684 (60.70 MB) | adam | bce_dice_loss | 0.926275 | 0.923475 | 0.9214 | 0.9866 | U-net 3++ |
-| 21 | unet_dropout-dilation_rate_nobridge | 12046212 (45.95 MB) | adam | bce_dice_loss | 0.9117 | 0.924175 | 0.937175 | 0.982825 | U-net |
-| 22 | croped_4channel_unet_nobridge | 15826116 (60.37 MB) | adam | bce_dice_loss | 0.7519 | 0.787425 | 0.83205 | 0.94565 | U-net |
+---
+
+### Model Performance Overview
+
+The table below summarizes the performance of various models trained on different datasets with different loss functions and optimizers. Metrics such as Recall, F1 Score, Precision, and Specificity are used to evaluate the models.
+
+| **Title**                               | **Base Model**   | **Dataset**  | **Parameter (Size)**    | **Optimizer**  | **Loss Function**               | **Recall** | **F1 Score** | **Precision** | **Specificity** |
+|-----------------------------------------|------------------|--------------|-------------------------|----------------|----------------------------------|------------|--------------|---------------|-----------------|
+| U-Net                                   | U-net            | Original     | 31032516 (118.38 MB)     | Adam           | Bce_Dice_Loss                   | 0.914275   | 0.91997      | 0.924925      | 0.984175        |
+| Attention U-Net                         | Attention U-Net  | Original     | 31870853 (121.58 MB)     | Adam           | Bce_Dice_Loss                   | 0.926376   | 0.92889      | 0.931425      | 0.988425        |
+| Res-U-Net++                             | Res-Unet++       | Original     | 4092868 (15.61 MB)       | Adam           | Bce_Dice_Loss                   | 0.911125   | 0.92221      | 0.933575      | 0.983725        |
+| U-Net (3++)                             | U-net 3++        | Original     | 8907396 (33.98 MB)      | Adam           | Bce_Dice_Loss                   | 0.92425    | 0.92335      | 0.922425      | 0.986125        |
+| 3++ Unet Nobridge Ell-Loss             | U-net 3++        | Original     | 8907396 (33.98 MB)      | Adam           | Ell_Loss (0.2)                  | 0.92805    | 0.92965      | 0.93135       | 0.988625        |
+| U-net Nobridge                          | U-net            | Original     | 15826116 (60.37 MB)     | Adam           | Bce_Dice_Loss                   | 0.92415    | 0.92325      | 0.922525      | 0.98885         |
+| Res-Unet++ Nobridge                    | Res-Unet++       | Original     | 4092868 (15.61 MB)      | Adam           | Bce_Dice_Loss                   | 0.912525   | 0.922825     | 0.933575      | 0.985125        |
+| U-net Ell-Loss Nobridge                | U-net            | Original     | 15826116 (60.37 MB)     | Adam           | Ell_Loss (0.7)                  | 0.92415    | 0.92325      | 0.922525      | 0.98885         |
+| 3Conv Block Unet Ell-Loss              | U-net            | Original     | 46774852 (178.43 MB)    | Adam           | Ell_Loss (0.7)                  | 0.90615    | 0.899525     | 0.900675      | 0.9885          |
+| 3Conv Block Unet-Nobridge Ell-Loss     | U-net            | Original     | 22117956 (84.37 MB)     | Adam           | Ell_Loss (0.7)                  | 0.917575   | 0.91495      | 0.912425      | 0.98785         |
+| 3Conv Block Unet-Nobridge-Weightedloss | U-net            | Original     | 22117956 (84.37 MB)     | Adam           | Weighted_Categorical_Crossentropy | 0.912925 | 0.909575     | 0.908725      | 0.9791          |
+| 3Conv Block Unet-5channel Ell-Loss     | U-net            | 5channel     | 46775428 (178.43 MB)    | Adam           | Ell_Loss (0.7)                  | 0.90575    | 0.916925     | 0.929375      | 0.98385         |
+| 3Conv Block Unet-5channel-Nobridge     | U-net            | 5channel     | 22118532 (84.38 MB)     | Adam           | Bce_Dice_Loss                   | 0.9115     | 0.916575     | 0.921925      | 0.982225        |
+| 3Conv Block Unet-5channel-Nobridge_wloss | U-net          | 5channel     | 18127940 (69.15 MB)     | Adam           | Weighted_Categorical_Crossentropy | 0.922925 | 0.92735      | 0.932         | 0.985725        |
+| 3Conv Block Unet-5channel-Nobridge     | U-net            | 5channel     | 12046212 (45.95 MB)     | Adam           | Bce_Dice_Loss                   | 0.9264     | 0.9286       | 0.93115       | 0.988825        |
+| 3Conv_Block_3++_Softdice               | U-net 3++        | Original     | 12046212 (45.95 MB)     | Adagrad        | Soft_Dice_Loss                  | 0.870175   | 0.887325     | 0.9056        | 0.975275        |
+| Unet_Dropout                           | U-net            | Original     | 31032516 (118.38 MB)    | Adam           | Bce_Dice_Loss                   | 0.9253     | 0.92805      | 0.931025      | 0.986175        |
+| Unet_Nobridge_Dropout                 | U-net            | Original     | 15826116 (60.37 MB)     | Adagrad        | Bce_Dice_Loss                   | 0.656725   | 0.657225     | 0.7663        | 0.9511          |
+| Unet_Dropout_Soft_Softdice            | U-net            | Original     | 31032516 (118.38 MB)    | Adagrad        | Soft_Dice_Loss                  | 0.607625   | 0.64925      | 0.800775      | 0.918125        |
+| Res-Unet++-Dropout_Softdice           | Res-Unet++       | Original     | 4092868 (15.61 MB)      | Adagrad        | Soft_Dice_Loss                  | 0.772875   | 0.78815      | 0.8222        | 0.97215         |
+| Unet_Dropout-Dilation_Rate           | U-net            | Original     | 31379716 (119.70 MB)    | Adam           | Bce_Dice_Loss                   | 0.9169     | 0.92425      | 0.9317        | 0.9846          |
+| Unet_Dilation_Rate                    | U-net            | Original     | 31379716 (119.70 MB)    | Adam           | Bce_Dice_Loss                   | 0.926875   | 0.9262       | 0.925725      | 0.98855         |
+| 3++_Nobridge-Dropout-E3              | U-net 3++        | Original     | 8907396 (33.98 MB)      | Adam           | Bce_Dice_Loss                   | 0.921925   | 0.928925     | 0.936225      | 0.984475        |
+| 3Conv_Block_3++_5Channel-Nobridge_Wloss-Ell-Dilation_Rate=3 | U-net 3++ | Original | 15911684 (60.70 MB) | Adam | Weighted_Categorical_Crossentropy | 0.926275 | 0.923475 | 0.9214 | 0.9866 |
+| Unet_Dropout-Dilation_Rate_Nobridge | U-net | Original | 12046212 (45.95 MB) | Adam | Bce_Dice_Loss | 0.9117 | 0.924175 | 0.937175 | 0.982825 |
+| Cropped_4Channel_Unet_Nobridge | U-net | Cropped | 15826116 (60.37 MB) | Adam | Bce_Dice_Loss | 0.7519 | 0.787425 | 0.83205 | 0.94565 |
+| Attention_Unet / Categorical_Crossentropy | Attention U-Net | Original | 31870853 (121.58 MB) | Adam | Categorical_Crossentropy | 0.926376 | 0.929 | 0.931775 | 0.9876 |
+| Attention_Unet / Bce_Dice_Loss       | Attention U-Net  | Original     | 31870853 (121.58 MB)     | Adam           | Bce_Dice_Loss                   | 0.929      | 0.93         | 0.9311        | 0.98895         |
+| Attention_Unet / Weighted_Categorical_Crossentropy | Attention U-Net | Original | 31870853 (121.58 MB) | Adam | Weighted_Categorical_Crossentropy | 0.929625 | 0.925325 | 0.921325 | 0.987025 |
+| Attention_Unet / Weighted_Categorical_Crossentropy (Bayesian Optimization) | Attention U-Net | Original | 31870853 (121.58 MB) | Adam | Weighted_Categorical_Crossentropy | 0.92375 | 0.900625 | 0.88125 | 0.993175 |
+| 3Chan_Unet | U-net | 3channel | 31031940 (118.38 MB) | Adam | Bce_Dice_Loss | 0.9125 | 0.9185 | 0.924775 | 0.982975 |
+| Edge Reinforcement Transfer Learning | U-net (twice)    | Edgy Dataset | 31031940 (118.38 MB)    | Adam           | Bce_Dice_Loss                   | 0.892225   | 0.89685      | 0.9026        | 0.979225        |
+
+---
+
 ![image](https://github.com/user-attachments/assets/55e4f492-b06a-41b3-a056-c2b33f8dc576)
 
 ## References
