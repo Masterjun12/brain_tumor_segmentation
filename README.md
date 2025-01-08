@@ -360,7 +360,6 @@ The table below summarizes the performance of various models trained on differen
 
 ---
 
-![image](https://github.com/user-attachments/assets/55e4f492-b06a-41b3-a056-c2b33f8dc576)
 
 ## References
 
