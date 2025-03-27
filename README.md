@@ -323,24 +323,26 @@ history= model.fit(train_images, train_labels, epochs=100, batch_size=32, valida
 
 - **Cropped**  
   Cropping the image to reduce the background area, expecting performance improvement.  
-  ![Cropped]([brain-tumor-Segmentation/9669ed4be1ac4f33b8731e4ff2c8b195/croped.jpg](https://github.com/Masterjun12/brain_tumor_segmentation/blob/82bbd3bf2af03d55647406488b9708ee36c241db/brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/croped.jpg))  
+  ![Cropped](brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/croped.jpg)  
 
 - **Gaussian Blur**  
   Applying Gaussian blur based on referenced research papers.  
-  ![Gaussian Blur]([brain-tumor-Segmentation/9669ed4be1ac4f33b8731e4ff2c8b195/가우시안.jpg](https://github.com/Masterjun12/brain_tumor_segmentation/blob/82bbd3bf2af03d55647406488b9708ee36c241db/brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/%EA%B0%80%EC%9A%B0%EC%8B%9C%EC%95%88.jpg))  
+  ![Gaussian Blur](brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/%EA%B0%80%EC%9A%B0%EC%8B%9C%EC%95%88.jpg)  
 
 - **Edge Map**  
   Extracting the edge of the actual brain tumor mask in the training dataset and synthesizing it with the tumor image. Used in the edge enhancement model.  
-  ![Edge Map]([brain-tumor-Segmentation/9669ed4be1ac4f33b8731e4ff2c8b195/엣지맵.jpg](https://github.com/Masterjun12/brain_tumor_segmentation/blob/82bbd3bf2af03d55647406488b9708ee36c241db/brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/%EC%97%A3%EC%A7%80%EB%A7%B5.jpg))  
-  ![Edge Synthesis]([brain-tumor-Segmentation/9669ed4be1ac4f33b8731e4ff2c8b195/엣지합성.jpg](https://github.com/Masterjun12/brain_tumor_segmentation/blob/82bbd3bf2af03d55647406488b9708ee36c241db/brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/%EC%97%A3%EC%A7%80%ED%95%A9%EC%84%B1.jpg))  
+  ![Edge Map](brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/%EC%97%A3%EC%A7%80%EB%A7%B5.jpg)  
+  ![Edge Synthesis](brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/%EC%97%A3%EC%A7%80%ED%95%A9%EC%84%B1.jpg)  
 
 - **Autoencoder Generation**  
   Training an autoencoder to generate images by synthesizing the brain tumor mask. After training, the model generates images for validation and test datasets, using them as input for further processing.  
-  ![Autoencoder]([brain-tumor-Segmentation/9669ed4be1ac4f33b8731e4ff2c8b195/오토인코더.jpg](https://github.com/Masterjun12/brain_tumor_segmentation/blob/82bbd3bf2af03d55647406488b9708ee36c241db/brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/%EC%98%A4%ED%86%A0%EC%9D%B8%EC%BD%94%EB%8D%94.jpg))  
+  ![Autoencoder](brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/%EC%98%A4%ED%86%A0%EC%9D%B8%EC%BD%94%EB%8D%94.jpg)  
 
 - **Clustering**  
   Using the K-means algorithm with K=5, assuming that the middle cluster represents the brain tumor mask. This preprocessing is based on the hypothesis that the central feature value of each brain tumor image corresponds to the tumor mask.  
-  ![Clustering]([brain-tumor-Segmentation/9669ed4be1ac4f33b8731e4ff2c8b195/클러스터링.jpg](https://github.com/Masterjun12/brain_tumor_segmentation/blob/82bbd3bf2af03d55647406488b9708ee36c241db/brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81.jpg))  
+  ![Clustering](brain-tumor-Segmentation%209669ed4be1ac4f33b8731e4ff2c8b195/%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81.jpg)  
+
+
 
 
 ### Model Performance Overview
