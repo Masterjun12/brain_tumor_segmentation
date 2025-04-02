@@ -349,7 +349,7 @@ history= model.fit(train_images, train_labels, epochs=100, batch_size=32, valida
 
 The table below summarizes the performance of various models trained on different datasets with different loss functions and optimizers. Metrics such as Recall, F1 Score, Precision, and Specificity are used to evaluate the models.
 
-| **Title**                               | **Base Model**   | **Dataset**  | **Parameter (Size)**    | **Optimizer**  | **Loss Function**               | **Recall** | **F1 Score** | **Precision** | **Specificity** |
+| **Title**                               | **Base Model**   | **Dataset**  | **Parameter (Size) <on checking>**    | **Optimizer**  | **Loss Function**               | **Recall** | **F1 Score** | **Precision** | **Specificity** |
 |-----------------------------------------|------------------|--------------|-------------------------|----------------|----------------------------------|------------|--------------|---------------|-----------------|
 | U-Net                                   | U-net            | Original     | 31032516 (118.38 MB)     | Adam           | Bce_Dice_Loss                   | 0.914275   | 0.91997      | 0.924925      | 0.984175        |
 | Attention U-Net                         | Attention U-Net  | Original     | 31870853 (121.58 MB)     | Adam           | Bce_Dice_Loss                   | 0.926376   | 0.92889      | 0.931425      | 0.988425        |
