@@ -383,7 +383,7 @@ The table below summarizes the performance of various models trained on differen
 | Attention_Unet / Weighted_Categorical_Crossentropy (Bayesian Optimization) | Attention U-Net | Original | 31870853 (121.58 MB) | Adam | Weighted_Categorical_Crossentropy | 0.92375 | 0.900625 | 0.88125 | 0.993175 |
 | 3Chan_Unet | U-net | 3channel | 31031940 (118.38 MB) | Adam | Bce_Dice_Loss | 0.9125 | 0.9185 | 0.924775 | 0.982975 |
 | Edge Reinforcement Transfer Learning | U-net (twice)    | Edgy Dataset | 31031940 (118.38 MB)    | Adam           | Bce_Dice_Loss                   | 0.892225   | 0.89685      | 0.9026        | 0.979225        |
-
+| EGB U-Net                                   | U-net            | Edgyed     | 33397444 (127.40 MB)     | Adam           | Bce_Dice_Loss                   | 0.914275   | 0.91997      | 0.924925      | 0.984175        |
 ---
 
 
